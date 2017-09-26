@@ -1,0 +1,2 @@
+-- TODO Create burgers db
+-- TODO Create burgers tabl (id, burger_name, devoured, date)

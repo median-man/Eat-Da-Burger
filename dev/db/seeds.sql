@@ -1,0 +1,1 @@
+-- TODO Queries to populate the burgers table with entries (at least 3)
