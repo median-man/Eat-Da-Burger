@@ -55,3 +55,9 @@ function updateOne(table, primaryKey, data) {
 		});
 	} );
 }
+
+module.exports = {
+	selectAll: selectAll,
+	insertOne: insertOne,
+	updateOne: updateOne
+};
