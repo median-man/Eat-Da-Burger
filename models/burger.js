@@ -1,7 +1,7 @@
 // =====================================================
 // DEPENDENCIES
 // =====================================================
-const ORM = require("..config/orm.js");
+const ORM = require("../config/orm.js");
 
 // TODO get all burgers
 function getAllBurgers() {
