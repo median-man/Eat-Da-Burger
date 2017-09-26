@@ -16,4 +16,4 @@ const config = {
 };
 
 // export connection to burgers_db
-module.exports = mysql.createConnection(config);
+module.exports = Mysql.createConnection(config);
