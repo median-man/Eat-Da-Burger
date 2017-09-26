@@ -42,14 +42,14 @@ function insertOne(table, data) {
 }
 
 // Query to update one record in burgers table. Returns promise.
-function updateOne(table, primaryKey, data) {
+function updateOne(table, where, data) {
 	return new Promise( ( resolve, reject ) => {
 		
 		// initialize sql statement
 		let sql = "UPDATE ?? SET ? WHERE ?";
 
 		// run query to get all data in table
-		Connection.query( sql, [table, data, primaryKey], ( err, data ) => {
+		Connection.query( sql, [table, data, where], ( err, data ) => {
 			if(err) return reject(err);
 			return resolve(data);
 		});
