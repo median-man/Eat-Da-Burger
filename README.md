@@ -5,7 +5,7 @@ A restaurant app that lets users input the names of burgers they would like to e
 Eat Da Burger hasn't been built yet.
 
 ## Repository
-https://github.com/median-man/bugers
+https://github.com/median-man/burgers
 
 ## Author
 John Desrosiers
