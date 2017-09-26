@@ -1,5 +1,7 @@
 // =====================================================
-// DEPENDENCIES
+// orm.js
+//
+// Contains methods to execute mysql commands.
 // =====================================================
 const Connection = require("./connection.js");
 
@@ -39,13 +41,17 @@ function insertOne(table, data) {
 	} );
 }
 
-// TODO Query to update one record in burgers table
+// Query to update one record in burgers table. Returns promise.
 function updateOne(table, primaryKey, data) {
-	
-}
+	return new Promise( ( resolve, reject ) => {
+		
+		// initialize sql statement
+		let sql = "UPDATE ?? SET ? WHERE ?";
 
-// selectAll("burgers").then(console.log).catch(console.log);
-insertOne("burgers", {
-	burger_name: "Anchovy Delight",
-	devoured: false
-}).then(console.log).catch(console.log);
+		// run query to get all data in table
+		Connection.query( sql, [table, data, primaryKey], ( err, data ) => {
+			if(err) return reject(err);
+			return resolve(data);
+		});
+	} );
+}
