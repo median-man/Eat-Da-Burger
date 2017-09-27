@@ -26,12 +26,12 @@ function add(name, devoured = false) {
 // PARAMETERS:
 //		id: integer for burger id in burgers db
 //		burger: object with fields and values to update for burger data
-function update(id, burger) {
-	return ORM.updateOne("burgers", { id: id }, burger);
+function devour(id) {
+	return ORM.updateOne("burgers", { id: id }, { devoured: true });
 }
 
 module.exports = {
 	getAllBurgers: getAllBurgers,
 	add: add,
-	update: update
+	devour: devour
 };
