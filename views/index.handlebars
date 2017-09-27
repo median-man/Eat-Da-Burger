@@ -1,2 +1,19 @@
-{{!-- TODO create template --}}
+{{!-- TODO improve styling of template --}}
+<h1>Burgers</h1>
+<div>
+	<h2>To Eat</h2>
+	{{#each burgers}}
+		{{#unless this.devoured}}
+			<li>{{this.burger_name}}</li>
+		{{/unless}}
+	{{/each}}
+</div>
+<div>
+	<h2>Devoured</h2>
+	{{#each burgers}}
+		{{#if this.devoured}}
+			<li>{{this.burger_name}}</li>
+		{{/if}}
+	{{/each}}
+</div>
 {{!-- TODO create submit button --}}
