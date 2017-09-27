@@ -29,17 +29,11 @@ function add(name, devoured = false, timestamp = void 0) {
 }
 
 // Updates information for a burger with matching unique id. Returns a promise.
-function update(id, name="", devoured = void 0, timestamp = void 0) {
-	let criteria = { id: id };
-
-	// add values to update to object if defined in arguments
-	let newBurger = {};
-	if(name.length>0) { newBurger.burger_name = name; }
-	if(typeof devoured !== "undefined") { newBurger.devoured = devoured; }
-	if(typeof timestamp !== "undefined") { newBurger.date = timestamp; }
-
-	// uses ORM.updateOne
-	return ORM.updateOne("burgers", criteria, newBurger);
+// PARAMETERS:
+//		id: integer for burger id in burgers db
+//		burger: object with fields and values to update for burger data
+function update(id, burger) {
+	return ORM.updateOne("burgers", { id: id }, burger);
 }
 
 module.exports = {
