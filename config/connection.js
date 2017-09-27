@@ -10,8 +10,8 @@ const Mysql = require("mysql");
 // db connection configuration
 const config = {
 	host: "localhost",
-	user: "root",
-	password: "rictor",
+	user: "",
+	password: "",
 	database: "burgers_db"
 };
 
