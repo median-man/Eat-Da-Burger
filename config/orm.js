@@ -41,12 +41,17 @@ function insertOne(table, data) {
 	} );
 }
 
-// Query to update one record in burgers table. Returns promise.
+// Query to update the first record found that satisfies a given crieteria. 
+// Returns a promise.
+// PARAMETERS:
+// 		table: name of the table
+// 		where: object containing criteria. keys must correspond to field names.
+// 		data: object with values to set. keys must correspond to field names.
 function updateOne(table, where, data) {
 	return new Promise( ( resolve, reject ) => {
 		
 		// initialize sql statement
-		let sql = "UPDATE ?? SET ? WHERE ?";
+		let sql = "UPDATE ?? SET ? WHERE ? LIMIT 1";
 
 		// run query to get all data in table
 		Connection.query( sql, [table, data, where], ( err, data ) => {
