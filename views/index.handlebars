@@ -2,11 +2,13 @@
 <h1>Burgers</h1>
 <div>
 	<h2>To Eat</h2>
+	<form action="/?_method=put" method="POST">
 	{{#each burgers}}
 		{{#unless this.devoured}}
-			<li>{{this.burger_name}}</li>
+			<li>{{this.burger_name}} {{> devour-burger}}</li>
 		{{/unless}}
 	{{/each}}
+	</form>
 </div>
 <div>
 	<h2>Devoured</h2>
