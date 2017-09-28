@@ -2,20 +2,20 @@
 <h1>Burgers</h1>
 <div>
 	<h2>To Eat</h2>
-	<form action="/?_method=put" method="POST">
 	{{#each burgers}}
 		{{#unless this.devoured}}
-			<li>{{this.burger_name}} {{> devour-burger}}</li>
+			<form action="/{{this.id}}?_method=put" method="POST">
+				<div>{{this.id}}. {{this.burger_name}} {{> devour-burger}}</div>
+			</form>
 		{{/unless}}
 	{{/each}}
-	</form>
 </div>
 <div>
 	<h2>Devoured</h2>
 	{{#each burgers}}
 		{{#if this.devoured}}
-			<li>{{this.burger_name}}</li>
+			<div>{{this.id}}. {{this.burger_name}}</div>
 		{{/if}}
 	{{/each}}
 </div>
-{{!-- TODO create submit button --}}
+{{!-- TODO create submit burger form --}}
