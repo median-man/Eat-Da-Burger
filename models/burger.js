@@ -14,12 +14,25 @@ function getAllBurgers() {
 // Adds burger to burgers table. Returns a promise.
 function add(name, devoured = false) {
 
+	// container for error object
+	let err = false;
+	
+	// validate name
+	if ( name.length < 1 ) { 
+		err = new Error("Invalid burger name. Burger name must have at least one character.");
+	}
+
 	// object with keys corresponding to burgers table
 	let newBurger = {
 		burger_name: name,
 		devoured: devoured
 	};
-	return ORM.insertOne( "burgers", newBurger);
+
+	// return a promise
+	return new Promise( (resolve, reject) => { 
+		if (err) { return reject(err); }
+		return ORM.insertOne( "burgers", newBurger).then(resolve);
+	});
 }
 
 // Updates information for a burger with matching unique id. Returns a promise.

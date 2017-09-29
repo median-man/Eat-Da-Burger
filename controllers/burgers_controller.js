@@ -12,7 +12,11 @@ const Burger = require("../models/burger.js"); // model
 // Handles a post request to add a new burger to the db.
 function addBurger(req, res) {
 	Burger.add(req.body.burger_name)
-		.then( () => { res.redirect("/"); });		
+		.then( () => { res.redirect("/"); })
+		.catch( (reason) => {
+			// an error occured adding the burger. quietly reload the page.
+			res.redirect("/");
+		});		
 }
 
 // Handles a put request to devour a burger and redirects to root.
