@@ -1,4 +1,4 @@
-# Eat Da Burger
+# Eat-Da-Burger
 A restaurant app that lets users input the names of burgers they would like to eat and track "devoured" burgers.
 
 ## Live Demo
@@ -24,13 +24,13 @@ else {
 	};
 }
 ```
-## Frameworks/Libraries Used
+## Built With
 * [Express](http://expressjs.com/)
 	* [body-parser](https://www.npmjs.com/package/body-parser)
-	* [method-override](https://www.npmjs.com/package/body-parser)
+	* [method-override](https://www.npmjs.com/package/method-override)
 	* [express-handlebars](https://github.com/ericf/express-handlebars)
-* [handlebars](https://github.com/mysqljs/mysql)
-* [MySql for Node](http://handlebarsjs.com/)
+* [handlebars](http://handlebarsjs.com/)
+* [MySql for Node](https://github.com/mysqljs/mysql)
 * [Spectre.css](https://picturepan2.github.io/spectre/index.html)
 
 ## Repository
