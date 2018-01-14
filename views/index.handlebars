@@ -4,38 +4,30 @@
 			<img id="burger-gif" class="centered img-responsive" src="https://media.giphy.com/media/uQvxobRExS9nG/giphy.gif">
 			<h1 class="text-center">Eat-Da-Burger!</h1>
 			<div class="divider"></div>
-		</header>		
-		<div class="column">
-			<h2 class="h3">To Eat</h2>
+		</header>	
+    	
+    {{#> section title="To Eat"}}
 			{{#each burgers}}
 				{{#unless this.devoured}}
-					<form action="/{{this.id}}?_method=put" method="POST">
-						<div class="tile">
-							<div class="tile-content">
-								<p class="tile-title">{{this.id}}. {{this.burger_name}}</p>								
-							</div>
-							<div class="tile-action">
-								{{> devour-burger}}
-							</div>
-						</div>
+					<form action="/{{this.id}}?_method=put" method="POST">          
+						{{> tile}}
 					</form>
 				{{/unless}}
 			{{/each}}
-		</div>
+    {{/ section}}
+    
 		<div class="divider-vert"></div>
-		<div class="column">
-			<h2 class="h3">Devoured</h2>
+    
+    {{#> section title="Devoured"}}
 			{{#each burgers}}
 				{{#if this.devoured}}
-					<div class="tile">
-						<div class="tile-content">
-							<p class="tile-title">{{this.id}}. {{this.burger_name}}</p>								
-						</div>
-					</div>
+					{{> tile}}
 				{{/if}}
 			{{/each}}
-		</div>
-	</div>
+    {{/ section}}
+    
+	</div> {{!-- end columns div --}}
+  
 	<div class="columns">
 		{{!-- add burger form --}}
 		<div class="column col-12">

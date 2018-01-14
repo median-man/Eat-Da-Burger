@@ -4,8 +4,8 @@
   "description": "Restaurant app that lets user input the names of burgers they would like to eat.",
   "main": "server.js",
   "scripts": {
-	"test": "echo \"Error: no test specified\" && exit 1",
-	"start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "John Desrosiers",
   "license": "UNLICENSED",
